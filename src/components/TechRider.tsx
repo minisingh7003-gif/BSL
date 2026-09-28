@@ -3,7 +3,7 @@ import { techRider, roomsData } from "@/data/epkData";
 
 export default function TechRider() {
   return (
-    <section id="tech-rider" className="relative z-10 bg-[#0d0d0d] border-b border-border">
+    <section id="tech-rider" className="relative z-10 bg-[#101A2B] border-b border-border">
       <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
         {/* Heading */}
         <div className="flex items-center gap-3 mb-2">
@@ -22,7 +22,7 @@ export default function TechRider() {
         {/* Rooms — compact inline grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border mb-16">
           {roomsData.map((room, i) => (
-            <div key={i} className="bg-[#0d0d0d] p-5 group transition-colors hover:bg-card">
+            <div key={i} className="bg-[#101A2B] p-5 group transition-colors hover:bg-card">
               <span className="font-display font-bold text-primary text-xl leading-none block mb-3">
                 {String(i + 1).padStart(2, "0")}
               </span>
@@ -49,7 +49,7 @@ export default function TechRider() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border">
           {techRider.map((section, i) => (
-            <div key={i} className="bg-[#0d0d0d] p-6 md:p-8">
+            <div key={i} className="bg-[#101A2B] p-6 md:p-8">
               <h3 className="font-display font-bold text-primary text-sm uppercase tracking-wide mb-4">
                 {section.category}
               </h3>

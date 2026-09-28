@@ -430,7 +430,7 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
                             </div>
                           </div>
                         ))}
-                        <button onClick={() => addArrayItem("music", "releases", { title: "New Release", type: "SINGLE", year: "2024", cover: "", streams: "0", links: [{ label: "YouTube", url: "" }], tagColor: "#C77B94" })} className="text-primary text-xs uppercase tracking-wider flex items-center gap-1 hover:text-white"><Plus className="w-3 h-3" /> Add Release</button>
+                        <button onClick={() => addArrayItem("music", "releases", { title: "New Release", type: "SINGLE", year: "2024", cover: "", streams: "0", links: [{ label: "YouTube", url: "" }], tagColor: "#C5A059" })} className="text-primary text-xs uppercase tracking-wider flex items-center gap-1 hover:text-white"><Plus className="w-3 h-3" /> Add Release</button>
                       </div>
                     </>
                   )}

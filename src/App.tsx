@@ -65,7 +65,7 @@ function App() {
         ref={cursorRef}
         className="fixed top-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none z-[5] hidden md:block"
         style={{
-          background: "radial-gradient(circle, rgba(199,123,148,0.06), transparent 60%)",
+          background: "radial-gradient(circle, rgba(197,160,89,0.06), transparent 60%)",
           transform: "translate(-200px, -200px)",
           transition: "opacity 0.3s",
         }}

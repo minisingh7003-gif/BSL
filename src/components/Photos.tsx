@@ -37,7 +37,7 @@ export default function Photos({ content }: { content: SiteContent }) {
       <div
         className="absolute top-1/4 -right-40 w-96 h-96 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(92,19,34,0.4), transparent 70%)",
+          background: "radial-gradient(circle, rgba(139,105,20,0.3), transparent 70%)",
           filter: "blur(40px)",
         }}
       />

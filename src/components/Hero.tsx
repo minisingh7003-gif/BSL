@@ -113,7 +113,7 @@ export default function Hero({ content }: { content: SiteContent }) {
             className="animate-clip-reveal-delay-2 block text-primary"
             style={{
               fontSize: "clamp(2.75rem, 11vw, 9rem)",
-              textShadow: "0 0 60px rgba(199,123,148,0.25)",
+              textShadow: "0 0 60px rgba(197,160,89,0.25)",
             }}
           >
             {hero.lastName}
@@ -134,7 +134,7 @@ export default function Hero({ content }: { content: SiteContent }) {
             href={content.contact.instagramDmUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-primary text-primary-fg font-display font-bold uppercase text-xs md:text-sm px-5 md:px-7 py-3.5 md:py-4 tracking-wide transition-all duration-300 hover:bg-fg hover:shadow-[0_0_30px_rgba(199,123,148,0.4)] whitespace-nowrap"
+            className="bg-primary text-primary-fg font-display font-bold uppercase text-xs md:text-sm px-5 md:px-7 py-3.5 md:py-4 tracking-wide transition-all duration-300 hover:bg-fg hover:shadow-[0_0_30px_rgba(197,160,89,0.4)] whitespace-nowrap"
           >
             <Instagram className="w-4 h-4" />
             Book Now

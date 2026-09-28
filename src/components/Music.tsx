@@ -74,7 +74,7 @@ function ReleaseCard({ release, index }: { release: ReleaseItem; index: number }
           />
           <div
             className="absolute top-0 left-0 font-display font-bold uppercase text-[10px] tracking-wider px-3 py-1.5 text-primary-fg z-[2]"
-            style={{ background: release.tagColor || "#C77B94" }}
+            style={{ background: release.tagColor || "#C5A059" }}
           >
             {release.type}
           </div>
@@ -114,12 +114,12 @@ export default function Music({ content }: { content: SiteContent }) {
   );
 
   return (
-    <section id="music" className="relative z-10 bg-[#231420] border-b border-border overflow-hidden">
+    <section id="music" className="relative z-10 bg-[#101A2B] border-b border-border overflow-hidden">
       {/* Parallax glow */}
       <div
         className="absolute top-1/3 -left-40 w-80 h-80 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(199,123,148,0.04), transparent 70%)",
+          background: "radial-gradient(circle, rgba(197,160,89,0.04), transparent 70%)",
           filter: "blur(40px)",
         }}
       />

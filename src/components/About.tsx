@@ -27,7 +27,7 @@ export default function About({ content }: { content: SiteContent }) {
       <div
         className="absolute -top-40 -right-40 w-96 h-96 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(199,123,148,0.06), transparent 70%)",
+          background: "radial-gradient(circle, rgba(197,160,89,0.06), transparent 70%)",
           filter: "blur(40px)",
         }}
       />
