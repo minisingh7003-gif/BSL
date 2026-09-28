@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #1C1018;
+  --color-fg: #F5ECF0;
+  --color-card: #261820;
+  --color-primary: #C77B94;
+  --color-primary-fg: #1C1018;
+  --color-muted: #6B5560;
+  --color-secondary: #A38A95;
+  --color-border: #3A2530;
+  --color-accent: #5C1322;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  background-color: #1C1018;
+  color: #F5ECF0;
+  overflow-x: hidden;
+}
+
+/* Display font utility */
+.font-display {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+/* Hide scrollbar for carousels / ticker */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Rose scrollbar globally */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1C1018;
+}
+::-webkit-scrollbar-thumb {
+  background: #C77B94;
+}
+
+/* Section number kicker */
+.section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+.section-kicker .num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  color: #C77B94;
+  letter-spacing: 0.25em;
+}
+.section-kicker .rule {
+  flex: 1;
+  height: 1px;
+  background: #3A2530;
+  max-width: 80px;
+}
+.section-kicker .label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  color: #6B5560;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* Clip-path reveal animation for hero text */
+@keyframes clip-reveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+.animate-clip-reveal {
+  animation: clip-reveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+.animate-clip-reveal-delay-1 {
+  animation: clip-reveal 1s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
+  opacity: 0;
+}
+.animate-clip-reveal-delay-2 {
+  animation: clip-reveal 1s cubic-bezier(0.77, 0, 0.175, 1) 0.4s forwards;
+  opacity: 0;
+}
+.animate-clip-reveal-delay-3 {
+  animation: clip-reveal 1s cubic-bezier(0.77, 0, 0.175, 1) 0.6s forwards;
+  opacity: 0;
+}
+
+/* Fade up */
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out forwards;
+}
+.animate-fade-up-delay {
+  animation: fade-up 0.8s ease-out 0.8s forwards;
+  opacity: 0;
+}
+
+/* Breathing pulse for CTA */
+@keyframes pulse-cta {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(199, 123, 148, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px 4px rgba(199, 123, 148, 0.5);
+  }
+}
+.animate-pulse-cta {
+  animation: pulse-cta 2.5s ease-in-out infinite;
+}
+
+/* Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Images always in color */
+.img-grayscale {
+  filter: none;
+  transition: transform 0.6s ease;
+}
+.img-grayscale:hover {
+  transform: scale(1.03);
+}
+
+/* Rose top-bar hover for photo cards */
+.photo-card {
+  position: relative;
+  overflow: hidden;
+}
+.photo-card .lime-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #C77B94;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+  z-index: 2;
+}
+.photo-card:hover .lime-bar {
+  transform: scaleX(1);
+}
+.photo-card .photo-credit {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #C77B94;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+.photo-card:hover .photo-credit {
+  opacity: 1;
+}
+
+/* Release card rose wash on hover */
+.release-card {
+  position: relative;
+  overflow: hidden;
+}
+.release-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(199, 123, 148, 0.08) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.release-card:hover::before {
+  opacity: 1;
+}
+
+/* Focus ring */
+*:focus-visible {
+  outline: 2px solid #C77B94;
+  outline-offset: 2px;
+}
+
+/* Ken Burns continuous zoom for hero slider */
+@keyframes kenburns {
+  0% {
+    transform: scale(1) translateX(0%);
+  }
+  100% {
+    transform: scale(1.15) translateX(-2%);
+  }
+}
+.animate-kenburns {
+  animation: kenburns 3.5s ease-out forwards;
+}
+
+/* Fade in */
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+/* Scale in */
+@keyframes scale-in {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.animate-scale-in {
+  animation: scale-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Scroll line indicator */
+@keyframes scroll-line {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  51% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+.animate-scroll-line {
+  animation: scroll-line 2s ease-in-out infinite;
+}
+
+/* Shimmer for hover states */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Glass morphism utility */
+.glass {
+  background: rgba(199, 123, 148, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(199, 123, 148, 0.12);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
