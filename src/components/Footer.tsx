@@ -19,7 +19,6 @@ export default function Footer({ content }: { content: SiteContent }) {
       <div className="max-w-7xl mx-auto px-6 py-12">
         <Reveal direction="up" duration={0.6}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 pb-10 border-b border-border">
-            {/* Name */}
             <div>
               <div className="font-display font-bold text-white text-2xl uppercase tracking-tight leading-none mb-2">
                 {footer.artistName}
@@ -29,7 +28,6 @@ export default function Footer({ content }: { content: SiteContent }) {
               </p>
             </div>
 
-            {/* Socials */}
             <div>
               <p className="text-muted text-[10px] uppercase tracking-[0.25em] mb-3">Follow</p>
               <div className="flex gap-3">
@@ -48,7 +46,6 @@ export default function Footer({ content }: { content: SiteContent }) {
               </div>
             </div>
 
-            {/* Streaming */}
             <div>
               <p className="text-muted text-[10px] uppercase tracking-[0.25em] mb-3">Stream On</p>
               <div className="flex flex-wrap gap-2">

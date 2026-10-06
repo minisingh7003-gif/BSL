@@ -57,15 +57,14 @@ export default function Contact({ content }: { content: SiteContent }) {
     setTimeout(() => setSent(false), 3000);
   }
 
-  const inputClass = "w-full bg-card border border-border text-fg px-4 py-3 text-sm focus:border-primary outline-none transition-all duration-300 placeholder:text-muted focus:shadow-[0_0_20px_rgba(197,160,89,0.15)]";
+  const inputClass = "w-full bg-card border border-border text-fg px-4 py-3 text-sm focus:border-primary outline-none transition-all duration-300 placeholder:text-muted focus:shadow-[0_0_20px_rgba(220,20,60,0.15)]";
 
   return (
     <section id="contact" className="relative z-10 bg-bg border-b border-border overflow-hidden">
-      {/* Parallax glow */}
       <div
         className="absolute bottom-0 left-1/3 w-96 h-96 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(197,160,89,0.06), transparent 70%)",
+          background: "radial-gradient(circle, rgba(220,20,60,0.06), transparent 70%)",
           filter: "blur(40px)",
         }}
       />
@@ -170,7 +169,7 @@ export default function Contact({ content }: { content: SiteContent }) {
                   href={contact.instagramDmUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-fg font-display font-bold uppercase text-sm px-6 py-3.5 tracking-wide transition-all duration-300 hover:bg-fg hover:shadow-[0_0_30px_rgba(197,160,89,0.4)]"
+                  className="inline-flex items-center gap-2 bg-primary text-primary-fg font-display font-bold uppercase text-sm px-6 py-3.5 tracking-wide transition-all duration-300 hover:bg-accent hover:shadow-[0_0_30px_rgba(220,20,60,0.4)]"
                 >
                   <Instagram className="w-4 h-4" />
                   Book Now

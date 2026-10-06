@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Play } from "lucide-react";
 import type { SiteContent } from "@/data/epkData";
 import Reveal from "@/components/Reveal";
@@ -12,7 +12,6 @@ function getYouTubeId(url: string): string {
 export default function About({ content }: { content: SiteContent }) {
   const { about } = content;
   const [playing, setPlaying] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
 
   const words = about.heading.split(" ");
   const highlightIdx = words.findIndex((w) =>
@@ -22,18 +21,16 @@ export default function About({ content }: { content: SiteContent }) {
   const videoId = getYouTubeId(about.showreelUrl);
 
   return (
-    <section id="about" ref={sectionRef} className="relative z-10 bg-bg border-b border-border overflow-hidden">
-      {/* Parallax glow */}
+    <section id="about" className="relative z-10 bg-bg border-b border-border overflow-hidden">
       <div
         className="absolute -top-40 -right-40 w-96 h-96 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(197,160,89,0.06), transparent 70%)",
+          background: "radial-gradient(circle, rgba(220,20,60,0.06), transparent 70%)",
           filter: "blur(40px)",
         }}
       />
 
       <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 relative">
-        {/* Heading */}
         <Reveal direction="up" duration={0.8}>
           <h2
             className="font-display font-bold uppercase leading-[0.85] tracking-tight text-white mb-12"
@@ -47,9 +44,7 @@ export default function About({ content }: { content: SiteContent }) {
           </h2>
         </Reveal>
 
-        {/* Showreel left, writeup right */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-stretch">
-          {/* Left — Showreel video */}
           <Reveal direction="left" duration={0.8}>
             <TiltCard maxTilt={5} className="group relative w-full overflow-hidden border border-border flex-1 flex flex-col h-full">
               {playing ? (
@@ -87,14 +82,13 @@ export default function About({ content }: { content: SiteContent }) {
                 <h3 className="font-display font-bold text-white text-sm uppercase leading-tight">
                   {about.showreelTitle}
                 </h3>
-                <p className="text-muted text-[10px] mt-1 font-light leading-relaxed">
+                <p className="text-secondary text-[10px] mt-1 font-light leading-relaxed">
                   {about.showreelDescription}
                 </p>
               </div>
             </TiltCard>
           </Reveal>
 
-          {/* Right — Writeup */}
           <Reveal direction="right" duration={0.8} delay={0.15}>
             <div className="flex flex-col justify-center space-y-5">
               {about.paragraphs.map((p, i) => (

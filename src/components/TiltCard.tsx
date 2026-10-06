@@ -30,7 +30,7 @@ export default function TiltCard({
     el.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
 
     if (glareRef.current) {
-      glareRef.current.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(197,160,89,0.15), transparent 60%)`;
+      glareRef.current.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(220,20,60,0.15), transparent 60%)`;
       glareRef.current.style.opacity = "1";
     }
   }

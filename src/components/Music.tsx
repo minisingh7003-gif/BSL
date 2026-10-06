@@ -52,7 +52,7 @@ function ShowcaseVideo({ video, index }: { video: VideoItem; index: number }) {
           <h3 className="font-display font-bold text-white text-sm uppercase leading-tight">
             {video.title}
           </h3>
-          <p className="text-muted text-[10px] mt-1 font-light leading-relaxed">
+          <p className="text-secondary text-[10px] mt-1 font-light leading-relaxed">
             {video.description}
           </p>
         </div>
@@ -74,7 +74,7 @@ function ReleaseCard({ release, index }: { release: ReleaseItem; index: number }
           />
           <div
             className="absolute top-0 left-0 font-display font-bold uppercase text-[10px] tracking-wider px-3 py-1.5 text-primary-fg z-[2]"
-            style={{ background: release.tagColor || "#C5A059" }}
+            style={{ background: release.tagColor || "#DC143C" }}
           >
             {release.type}
           </div>
@@ -83,7 +83,7 @@ function ReleaseCard({ release, index }: { release: ReleaseItem; index: number }
           <h3 className="font-display font-bold text-white text-sm uppercase leading-tight">
             {release.title}
           </h3>
-          <p className="text-muted text-[10px] uppercase tracking-wider mt-1">
+          <p className="text-secondary text-[10px] uppercase tracking-wider mt-1">
             {release.year} · {release.streams}
           </p>
           <div className="flex gap-2 mt-3">
@@ -114,12 +114,11 @@ export default function Music({ content }: { content: SiteContent }) {
   );
 
   return (
-    <section id="music" className="relative z-10 bg-[#101A2B] border-b border-border overflow-hidden">
-      {/* Parallax glow */}
+    <section id="music" className="relative z-10 bg-[#111111] border-b border-border overflow-hidden">
       <div
         className="absolute top-1/3 -left-40 w-80 h-80 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(197,160,89,0.04), transparent 70%)",
+          background: "radial-gradient(circle, rgba(220,20,60,0.04), transparent 70%)",
           filter: "blur(40px)",
         }}
       />
@@ -144,14 +143,12 @@ export default function Music({ content }: { content: SiteContent }) {
           </p>
         </Reveal>
 
-        {/* Video showcase grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-px md:bg-border mb-20">
           {music.showcaseVideos.map((video, i) => (
             <ShowcaseVideo key={i} video={video} index={i} />
           ))}
         </div>
 
-        {/* Releases sub-heading */}
         <Reveal direction="up" duration={0.7}>
           <h3
             className="font-display font-bold uppercase leading-[0.85] tracking-tight text-white mb-2"
@@ -166,7 +163,6 @@ export default function Music({ content }: { content: SiteContent }) {
           </p>
         </Reveal>
 
-        {/* Release grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-px md:bg-border">
           {music.releases.map((release, i) => (
             <ReleaseCard key={i} release={release} index={i} />

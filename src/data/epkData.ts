@@ -21,12 +21,6 @@ export interface ReleaseItem {
   tagColor?: string;
 }
 
-export interface ContactCard {
-  label: string;
-  name: string;
-  email: string;
-}
-
 export interface SocialLink {
   platform: string;
   url: string;
@@ -39,6 +33,26 @@ export interface StreamingPlatform {
   icon: string;
 }
 
+export interface StatItem {
+  value: number;
+  suffix: string;
+  label: string;
+}
+
+export interface PressLogo {
+  name: string;
+  logo: string;
+}
+
+export interface DownloadableAsset {
+  title: string;
+  description: string;
+  fileType: string;
+  fileSize: string;
+  url: string;
+  icon: string;
+}
+
 export interface SiteContent {
   hero: {
     firstName: string;
@@ -47,7 +61,6 @@ export interface SiteContent {
     description: string;
     backgroundImage: string;
     sliderImages: string[];
-    techRiderPdfUrl: string;
   };
   about: {
     heading: string;
@@ -77,7 +90,6 @@ export interface SiteContent {
     blurb: string;
     bookingEmail: string;
     instagramDmUrl: string;
-    contacts: ContactCard[];
   };
   footer: {
     artistName: string;
@@ -87,69 +99,6 @@ export interface SiteContent {
     streaming: StreamingPlatform[];
   };
 }
-
-export interface RoomItem {
-  title: string;
-  description: string;
-}
-
-export interface TechRiderItem {
-  category: string;
-  items: string[];
-}
-
-export const roomsData: RoomItem[] = [
-  { title: "South Asian Weddings & Sangeet", description: "Full live-band sets for the baraat, sangeet and reception — authentic Hindi and Bollywood song lists for desi weddings across the US and Canada." },
-  { title: "Corporate & Diwali Galas", description: "Polished, brand-appropriate live entertainment for corporate galas, Diwali nights, cultural associations and award evenings." },
-  { title: "University & College Shows", description: "High-energy Bollywood concert sets for South Asian student associations and campus culture nights." },
-  { title: "Private & Club Shows", description: "Intimate live-band evenings and club nights — from soulful ghazals to a full Bollywood dance floor." },
-];
-
-export const techRider: TechRiderItem[] = [
-  {
-    category: "Vocal Requirements",
-    items: [
-      "1x Shure SM58 or equivalent wireless handheld microphone",
-      "1x floor monitor wedge (stage left)",
-      "Reverb/delay on vocal channel (preferably TC Helicon or equivalent)",
-    ],
-  },
-  {
-    category: "Band Backline",
-    items: [
-      "1x keyboard/synth with sustain pedal (Yamaha or Roland preferred)",
-      "1x acoustic guitar with DI box and cable",
-      "1x Cajon / percussion kit with microphone",
-      "1x bass guitar amplifier (minimum 100W)",
-    ],
-  },
-  {
-    category: "PA & Monitoring",
-    items: [
-      "FOH PA system suited to venue capacity (minimum 2kW for 200+ guests)",
-      "8-channel mixing desk minimum (16 preferred)",
-      "2x floor monitors for band",
-      "DI boxes x3 minimum",
-    ],
-  },
-  {
-    category: "Stage & Lighting",
-    items: [
-      "Minimum stage area: 4m x 3m (larger preferred for full band)",
-      "Basic stage lighting (warm wash + 2 spotlights on vocal position)",
-      "1x microphone stand (boom arm preferred)",
-      "Power: 3x 13A sockets minimum at stage area",
-    ],
-  },
-  {
-    category: "Technical Contact",
-    items: [
-      "Sound check: minimum 90 minutes before doors",
-      "Technical contact to be available from load-in through sound check",
-      "Set list and stage plot provided 48 hours before performance",
-    ],
-  },
-];
 
 function ytThumb(id: string): string {
   return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
@@ -163,7 +112,6 @@ export const defaultContent: SiteContent = {
     description: "A Bollywood voice raised on riyaaz — bringing the songs that raised us to your stage, live, wherever home is now.",
     backgroundImage: "https://i.ytimg.com/vi/77AX44whQyY/maxresdefault.jpg",
     sliderImages: [],
-    techRiderPdfUrl: "",
   },
   about: {
     heading: "Every song carries a little bit of home",
@@ -202,7 +150,7 @@ export const defaultContent: SiteContent = {
           { label: "YouTube", url: "https://youtu.be/tB-SVGFH7Is" },
           { label: "Spotify", url: "https://spotify.com" },
         ],
-        tagColor: "#C5A059",
+        tagColor: "#DC143C",
       },
       {
         title: "Playback Release 2",
@@ -214,7 +162,7 @@ export const defaultContent: SiteContent = {
           { label: "YouTube", url: "https://youtu.be/oEBC1Or8teQ" },
           { label: "Spotify", url: "https://spotify.com" },
         ],
-        tagColor: "#C5A059",
+        tagColor: "#DC143C",
       },
       {
         title: "Original Composition",
@@ -226,7 +174,7 @@ export const defaultContent: SiteContent = {
           { label: "YouTube", url: "https://youtu.be/iV5rNXgQySg" },
           { label: "Spotify", url: "https://spotify.com" },
         ],
-        tagColor: "#8B6914",
+        tagColor: "#8B0000",
       },
     ],
   },
@@ -248,7 +196,6 @@ export const defaultContent: SiteContent = {
     blurb: "Tell me about your evening — the date, the city, the people who will be in the room. You'll hear back from me personally, not an autoresponder. This part I like to do myself.",
     bookingEmail: "bhaswatis.music@gmail.com",
     instagramDmUrl: "https://ig.me/m/itsmebsg",
-    contacts: [],
   },
   footer: {
     artistName: "Bhaswati Sen Gupta",
@@ -268,3 +215,26 @@ export const defaultContent: SiteContent = {
     ],
   },
 };
+
+export const statsData: StatItem[] = [
+  { value: 150, suffix: "+", label: "Live Performances" },
+  { value: 40, suffix: "+", label: "Original Releases" },
+  { value: 3, suffix: "", label: "Countries Toured" },
+  { value: 500, suffix: "K", label: "Total Streams" },
+];
+
+export const pressLogos: PressLogo[] = [
+  { name: "Rolling Stone India", logo: "Rolling Stone" },
+  { name: "Vogue India", logo: "Vogue" },
+  { name: "Times of India", logo: "TOI" },
+  { name: "Bollywood Hungama", logo: "BH" },
+  { name: "Filmfare", logo: "Filmfare" },
+  { name: "NDTV", logo: "NDTV" },
+];
+
+export const downloadableAssets: DownloadableAsset[] = [
+  { title: "Press Kit", description: "Complete bio, photos, and contact info", fileType: "PDF", fileSize: "2.4 MB", url: "#", icon: "file" },
+  { title: "Hi-Res Photos", description: "High-resolution promotional images", fileType: "ZIP", fileSize: "45 MB", url: "#", icon: "image" },
+  { title: "Stage Plot", description: "Technical requirements and stage layout", fileType: "PDF", fileSize: "1.1 MB", url: "#", icon: "layout" },
+  { title: "Set List", description: "Sample performance set lists", fileType: "PDF", fileSize: "0.8 MB", url: "#", icon: "music" },
+];

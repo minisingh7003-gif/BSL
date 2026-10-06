@@ -27,6 +27,7 @@ export default function Nav({ content }: { content: SiteContent }) {
     { label: "About", href: "#about" },
     { label: "Music", href: "#music" },
     { label: "Photos", href: "#photos" },
+    { label: "Press", href: "#press" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -39,7 +40,6 @@ export default function Nav({ content }: { content: SiteContent }) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
-        {/* Desktop nav with underline animation */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
@@ -53,7 +53,6 @@ export default function Nav({ content }: { content: SiteContent }) {
           ))}
         </div>
 
-        {/* Mobile hamburger */}
         <button
           className="md:hidden text-secondary hover:text-primary transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -62,7 +61,6 @@ export default function Nav({ content }: { content: SiteContent }) {
           {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
 
-        {/* Socials with hover lift */}
         <div className="flex items-center gap-2">
           {socials.map((social, i) => (
             <a
@@ -79,7 +77,6 @@ export default function Nav({ content }: { content: SiteContent }) {
         </div>
       </div>
 
-      {/* Mobile dropdown menu */}
       {menuOpen && (
         <div className="md:hidden bg-bg/98 backdrop-blur-xl border-b border-border animate-fade-in">
           <div className="px-4 py-4 flex flex-col gap-3">

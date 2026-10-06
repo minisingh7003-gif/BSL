@@ -33,11 +33,10 @@ export default function Photos({ content }: { content: SiteContent }) {
 
   return (
     <section id="photos" className="relative z-10 bg-bg border-b border-border overflow-hidden">
-      {/* Parallax glow */}
       <div
         className="absolute top-1/4 -right-40 w-96 h-96 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(139,105,20,0.3), transparent 70%)",
+          background: "radial-gradient(circle, rgba(139,0,0,0.3), transparent 70%)",
           filter: "blur(40px)",
         }}
       />
@@ -56,7 +55,6 @@ export default function Photos({ content }: { content: SiteContent }) {
           </h2>
         </Reveal>
 
-        {/* Photo grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-border">
           {photos.photos.map((photo, i) => (
             <Reveal
@@ -70,7 +68,7 @@ export default function Photos({ content }: { content: SiteContent }) {
                 className="photo-card bg-bg cursor-pointer aspect-[4/5] w-full h-full"
                 onClick={() => setLightbox(i)}
               >
-                <div className="lime-bar" />
+                <div className="crimson-bar" />
                 <img
                   src={photo.src}
                   alt={photo.credit}
@@ -84,7 +82,6 @@ export default function Photos({ content }: { content: SiteContent }) {
         </div>
       </div>
 
-      {/* Lightbox */}
       {lightbox !== null && (
         <div
           className="fixed inset-0 z-[100] bg-bg/95 backdrop-blur-md flex items-center justify-center animate-fade-in"
