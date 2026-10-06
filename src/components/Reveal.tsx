@@ -1,71 +1,33 @@
-import { useEffect, useRef, useState } from "react";
+import { motion, type HTMLMotionProps, useInView } from "framer-motion";
+import { useRef } from "react";
 
-type Direction = "up" | "down" | "left" | "right" | "scale" | "blur";
-
-const offsetMap: Record<Direction, string> = {
-  up: "translateY(40px)",
-  down: "translateY(-40px)",
-  left: "translateX(40px)",
-  right: "translateX(-40px)",
-  scale: "scale(0.92)",
-  blur: "translateY(20px)",
-};
-
-interface RevealProps {
-  children: React.ReactNode;
-  direction?: Direction;
+interface RevealProps extends HTMLMotionProps<"div"> {
   delay?: number;
   duration?: number;
-  threshold?: number;
-  once?: boolean;
-  className?: string;
+  direction?: "up" | "left" | "right" | "scale";
 }
 
-export default function Reveal({
-  children,
-  direction = "up",
-  delay = 0,
-  duration = 0.7,
-  threshold = 0.15,
-  once = true,
-  className = "",
-}: RevealProps) {
+export default function Reveal({ children, delay = 0, duration = 0.75, direction = "up", className, ...props }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          if (once) observer.unobserve(el);
-        } else if (!once) {
-          setVisible(false);
-        }
-      },
-      { threshold, rootMargin: "0px 0px -60px 0px" }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [threshold, once]);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const offsets = {
+    up: { y: 36, x: 0 },
+    left: { y: 0, x: -36 },
+    right: { y: 0, x: 36 },
+    scale: { y: 0, x: 0 },
+  };
+  const offset = offsets[direction];
 
   return (
-    <div
+    <motion.div
       ref={ref}
+      initial={{ opacity: 0, x: offset.x, y: offset.y, scale: direction === "scale" ? 0.94 : 1 }}
+      animate={isInView ? { opacity: 1, x: 0, y: 0, scale: 1 } : undefined}
+      transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
       className={className}
-      style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translate(0, 0) scale(1)" : offsetMap[direction],
-        filter: direction === "blur" && !visible ? "blur(12px)" : "blur(0px)",
-        transition: `opacity ${duration}s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s, transform ${duration}s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s, filter ${duration}s ease ${delay}s`,
-        willChange: "opacity, transform",
-      }}
+      {...props}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
