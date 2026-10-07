@@ -27,7 +27,6 @@ export default function Nav({ content }: { content: SiteContent }) {
     { label: "About", href: "#about" },
     { label: "Music", href: "#music" },
     { label: "Photos", href: "#photos" },
-    { label: "Press", href: "#press" },
     { label: "Contact", href: "#contact" },
   ];
 
