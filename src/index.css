@@ -5,16 +5,16 @@
 @tailwind utilities;
 
 :root {
-  --color-bg-base: #0B0B0D;
-  --color-bg-surface: #141417;
-  --color-bg-elevated: #1E1D22;
-  --color-crimson-neon: #FF1E42;
-  --color-crimson-velvet: #8B0A1E;
-  --color-crimson-deep: #3B040D;
-  --color-gold-champagne: #D4AF37;
-  --color-gold-brass: #C5A059;
-  --text-primary: #F5F5F7;
-  --text-secondary: #A1A1AA;
+  --color-bg-base: #080809;
+  --color-bg-surface: #111113;
+  --color-bg-elevated: #1B1A1E;
+  --color-crimson-neon: #E51A3A;
+  --color-crimson-velvet: #6E0B1A;
+  --color-crimson-deep: #2A030B;
+  --color-gold-champagne: #B78E48;
+  --color-gold-brass: #9E7A45;
+  --text-primary: #F3F1F2;
+  --text-secondary: #929097;
   --glow-crimson: 0 0 35px rgba(255, 30, 66, 0.45);
   --glow-gold: 0 0 20px rgba(212, 175, 55, 0.25);
   --border-glass: 1px solid rgba(255, 255, 255, 0.08);
@@ -54,10 +54,10 @@ body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; font-weight: 300
 .animate-glow-pulse { animation: glow-pulse 2s ease-in-out infinite; }
 @keyframes ripple { 0% { transform: scale(0); opacity: .6; } 100% { transform: scale(4); opacity: 0; } }
 @keyframes gradient-text { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-.gradient-text { background: linear-gradient(90deg, #FF1E42, #D4AF37, #FF1E42); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: gradient-text 3s ease infinite; }
+.gradient-text { background: linear-gradient(90deg, #E51A3A, #B78E48, #E51A3A); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: gradient-text 3s ease infinite; }
 
-.bg-fluted-panels { background-color: #0B0B0D; background-image: repeating-linear-gradient(90deg, rgba(0,0,0,.8) 0, rgba(0,0,0,.8) 12px, rgba(255,255,255,.03) 13px, rgba(20,20,23,1) 24px); }
-.velvet-button { background: linear-gradient(135deg, #FF1E42 0%, #8B0A1E 100%); box-shadow: 0 0 30px -5px rgba(255,30,66,.4); border: 1px solid rgba(255,30,66,.3); }
+.bg-fluted-panels { background-color: #080809; background-image: repeating-linear-gradient(90deg, rgba(0,0,0,.84) 0, rgba(0,0,0,.84) 12px, rgba(255,255,255,.025) 13px, rgba(17,17,19,1) 24px); }
+.velvet-button { background: linear-gradient(135deg, #E51A3A 0%, #6E0B1A 100%); box-shadow: 0 0 30px -5px rgba(229,26,58,.34); border: 1px solid rgba(229,26,58,.3); }
 .velvet-button:hover { box-shadow: 0 0 60px -10px rgba(255,30,66,.6); transform: scale(1.03); }
 
 .img-grayscale { filter: none; transition: transform .6s ease; }
@@ -83,10 +83,10 @@ body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; font-weight: 300
 @keyframes scroll-line { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
 .animate-scroll-line { animation: scroll-line 2s ease-in-out infinite; }
 .glass { background: rgba(20,20,23,.72); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: var(--border-glass); }
-.glass-card { background: rgba(20,20,23,.8); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: var(--border-glass); box-shadow: inset 0 1px 0 rgba(255,255,255,.03); }
-.glass-card:hover { border-color: rgba(212,175,55,.4); box-shadow: 0 0 30px -5px rgba(255,30,66,.25); }
+.glass-card { background: linear-gradient(145deg, rgba(27,26,30,.9), rgba(17,17,19,.84) 58%, rgba(42,3,11,.42)); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: var(--border-glass); box-shadow: inset 0 1px 0 rgba(255,255,255,.035), inset 0 -18px 40px rgba(42,3,11,.12); }
+.glass-card:hover { border-color: rgba(212,175,55,.4); box-shadow: 0 0 30px -5px rgba(229,26,58,.2), inset 0 -18px 40px rgba(42,3,11,.22); }
 .btn-ripple { position: relative; overflow: hidden; }
 .btn-ripple .ripple { position: absolute; border-radius: 50%; background: rgba(255,255,255,.3); transform: scale(0); animation: ripple .6s ease-out; pointer-events: none; }
-.skeleton { background: linear-gradient(90deg, #141417 25%, #1E1D22 50%, #141417 75%); background-size: 200% 100%; animation: shimmer 1.5s linear infinite; }
+.skeleton { background: linear-gradient(90deg, #111113 25%, #1B1A1E 50%, #111113 75%); background-size: 200% 100%; animation: shimmer 1.5s linear infinite; }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
