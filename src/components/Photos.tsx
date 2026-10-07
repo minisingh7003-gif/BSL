@@ -36,7 +36,7 @@ export default function Photos({ content }: { content: SiteContent }) {
       <div
         className="absolute top-1/4 -right-40 w-96 h-96 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(139,0,0,0.3), transparent 70%)",
+          background: "radial-gradient(circle, rgba(139,10,30,0.42), transparent 70%)",
           filter: "blur(40px)",
         }}
       />
@@ -44,11 +44,11 @@ export default function Photos({ content }: { content: SiteContent }) {
       <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 relative">
         <Reveal direction="up" duration={0.8}>
           <h2
-            className="font-display font-bold uppercase leading-[0.85] tracking-tight text-white mb-12"
+            className="font-display font-bold uppercase leading-[0.85] tracking-tight text-fg mb-12"
             style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
           >
             {words.map((word, i) => (
-              <span key={i} className={i === highlightIdx ? "text-primary" : ""}>
+              <span key={i} className={i === highlightIdx ? "text-accent" : ""}>
                 {word}{i < words.length - 1 ? " " : ""}
               </span>
             ))}
@@ -84,18 +84,18 @@ export default function Photos({ content }: { content: SiteContent }) {
 
       {lightbox !== null && (
         <div
-          className="fixed inset-0 z-[100] bg-bg/95 backdrop-blur-md flex items-center justify-center animate-fade-in"
+          className="fixed inset-0 z-[100] bg-bg/95 backdrop-blur-xl flex items-center justify-center animate-fade-in"
           onClick={closeLightbox}
         >
           <button
-            className="absolute top-6 right-6 text-white hover:text-primary transition-colors z-10"
+            className="absolute top-6 right-6 text-fg hover:text-accent transition-colors z-10"
             onClick={closeLightbox}
             aria-label="Close"
           >
             <X className="w-8 h-8" />
           </button>
           <button
-            className="absolute left-4 md:left-8 text-white hover:text-primary transition-colors p-2"
+            className="absolute left-4 md:left-8 text-fg hover:text-accent transition-colors p-2"
             onClick={(e) => { e.stopPropagation(); prevPhoto(); }}
             aria-label="Previous"
           >
@@ -108,14 +108,14 @@ export default function Photos({ content }: { content: SiteContent }) {
             onClick={(e) => e.stopPropagation()}
           />
           <button
-            className="absolute right-4 md:right-8 text-white hover:text-primary transition-colors p-2"
+            className="absolute right-4 md:right-8 text-fg hover:text-accent transition-colors p-2"
             onClick={(e) => { e.stopPropagation(); nextPhoto(); }}
             aria-label="Next"
           >
             <ChevronRight className="w-8 h-8" />
           </button>
           <div className="absolute bottom-6 left-0 right-0 text-center">
-            <span className="text-primary text-[10px] uppercase tracking-[0.25em]">
+            <span className="text-accent text-[10px] uppercase tracking-[0.25em]">
               {photos.photos[lightbox].credit}
             </span>
           </div>

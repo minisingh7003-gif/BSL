@@ -150,7 +150,7 @@ export const defaultContent: SiteContent = {
           { label: "YouTube", url: "https://youtu.be/tB-SVGFH7Is" },
           { label: "Spotify", url: "https://spotify.com" },
         ],
-        tagColor: "#DC143C",
+        tagColor: "#FF1E42",
       },
       {
         title: "Playback Release 2",
@@ -162,7 +162,7 @@ export const defaultContent: SiteContent = {
           { label: "YouTube", url: "https://youtu.be/oEBC1Or8teQ" },
           { label: "Spotify", url: "https://spotify.com" },
         ],
-        tagColor: "#DC143C",
+        tagColor: "#FF1E42",
       },
       {
         title: "Original Composition",
@@ -174,7 +174,7 @@ export const defaultContent: SiteContent = {
           { label: "YouTube", url: "https://youtu.be/iV5rNXgQySg" },
           { label: "Spotify", url: "https://spotify.com" },
         ],
-        tagColor: "#8B0000",
+        tagColor: "#8B0A1E",
       },
     ],
   },

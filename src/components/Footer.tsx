@@ -38,7 +38,7 @@ export default function Footer({ content }: { content: SiteContent }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.platform}
-                    className="w-10 h-10 border border-border flex items-center justify-center transition-all duration-300 hover:border-primary hover:bg-primary/10 hover:-translate-y-1"
+                    className="w-10 h-10 border border-border flex items-center justify-center transition-all duration-300 hover:border-accent hover:bg-accent/10 hover:-translate-y-1"
                   >
                     {iconMap[social.icon] || <Headphones className="w-4 h-4 text-secondary" />}
                   </a>
@@ -55,7 +55,7 @@ export default function Footer({ content }: { content: SiteContent }) {
                     href={platform.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 border border-border px-3 py-2 transition-all duration-300 hover:border-primary hover:-translate-y-0.5"
+                    className="inline-flex items-center gap-1.5 border border-border px-3 py-2 transition-all duration-300 hover:border-accent hover:-translate-y-0.5"
                   >
                     {iconMap[platform.icon] || <Music2 className="w-3.5 h-3.5 text-secondary" />}
                     <span className="text-secondary text-[10px] uppercase tracking-wider">{platform.platform}</span>

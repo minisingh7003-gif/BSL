@@ -11,11 +11,11 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function DownloadableAssets() {
   return (
-    <section className="relative z-10 bg-[#111111] border-b border-border overflow-hidden">
+    <section className="relative z-10 bg-noir-surface border-b border-border overflow-hidden">
       <div
         className="absolute -top-20 right-0 w-80 h-80 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(220,20,60,0.05), transparent 70%)",
+          background: "radial-gradient(circle, rgba(255,30,66,0.12), transparent 70%)",
           filter: "blur(40px)",
         }}
       />
@@ -39,11 +39,11 @@ export default function DownloadableAssets() {
             <Reveal key={i} direction="up" delay={i * 0.08} duration={0.6}>
               <a
                 href={asset.url}
-                className="group glass-card p-6 flex flex-col h-full transition-all duration-300 hover:border-primary hover:-translate-y-1 relative overflow-hidden"
+                className="group glass-card p-6 flex flex-col h-full transition-all duration-300 hover:border-accent hover:-translate-y-1 relative overflow-hidden"
               >
                 <div className="absolute inset-0 shimmer-bg opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 <div className="relative flex items-center justify-between mb-4">
-                  <div className="text-primary transition-transform duration-300 group-hover:scale-110">
+                  <div className="text-accent transition-transform duration-300 group-hover:scale-110">
                     {iconMap[asset.icon] || <FileText className="w-6 h-6" />}
                   </div>
                   <span className="text-[10px] uppercase tracking-wider text-muted border border-border px-2 py-1">
@@ -58,7 +58,7 @@ export default function DownloadableAssets() {
                 </p>
                 <div className="flex items-center justify-between relative">
                   <span className="text-muted text-[10px] uppercase tracking-wider">{asset.fileSize}</span>
-                  <span className="inline-flex items-center gap-1.5 text-primary text-[10px] uppercase tracking-wider font-display font-bold transition-all group-hover:gap-3">
+                  <span className="inline-flex items-center gap-1.5 text-accent text-[10px] uppercase tracking-wider font-display font-bold transition-all group-hover:gap-3">
                     <Download className="w-3.5 h-3.5" />
                     Download
                   </span>

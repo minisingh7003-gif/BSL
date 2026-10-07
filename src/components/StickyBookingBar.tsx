@@ -11,7 +11,7 @@ export default function StickyBookingBar({ content }: { content: SiteContent }) 
           href={contact.instagramDmUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center w-full bg-primary text-primary-fg font-display font-bold uppercase text-sm py-3.5 tracking-wide animate-pulse-cta"
+          className="velvet-button flex items-center justify-center w-full text-primary-fg font-display font-bold uppercase text-sm py-3.5 tracking-wide animate-pulse-cta"
         >
           <Instagram className="w-4 h-4 mr-2" />
           Book Now

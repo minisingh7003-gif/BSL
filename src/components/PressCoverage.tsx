@@ -10,7 +10,7 @@ export default function PressCoverage() {
             className="font-display font-bold uppercase leading-[0.85] tracking-tight text-white mb-4 text-center"
             style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
           >
-            As Seen <span className="text-primary">In</span>
+            As Seen <span className="text-accent">In</span>
           </h2>
         </Reveal>
         <Reveal direction="up" delay={0.1} duration={0.7}>
@@ -22,8 +22,8 @@ export default function PressCoverage() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-px bg-border">
           {pressLogos.map((logo, i) => (
             <Reveal key={i} direction="scale" delay={i * 0.06} duration={0.5}>
-              <div className="bg-bg h-24 md:h-28 flex items-center justify-center group cursor-pointer transition-all duration-300 hover:bg-card">
-                <span className="font-display font-bold text-2xl md:text-3xl text-muted group-hover:text-primary transition-colors duration-300 tracking-tight">
+              <div className="bg-bg h-24 md:h-28 flex items-center justify-center group cursor-pointer transition-all duration-300 hover:bg-noir-elevated">
+                <span className="font-display font-bold text-2xl md:text-3xl text-muted group-hover:text-accent transition-colors duration-300 tracking-tight">
                   {logo.logo}
                 </span>
               </div>

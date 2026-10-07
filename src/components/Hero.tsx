@@ -40,7 +40,7 @@ export default function Hero({ content }: { content: SiteContent }) {
     <section
       id="top"
       ref={sectionRef}
-      className="relative min-h-screen w-full overflow-hidden"
+      className="relative min-h-screen w-full overflow-hidden bg-fluted-panels"
     >
       <div
         className="absolute inset-0 overflow-hidden"
@@ -90,13 +90,13 @@ export default function Hero({ content }: { content: SiteContent }) {
         }}
       >
         <p
-          className="animate-clip-reveal text-primary font-display font-medium uppercase mb-5 md:mb-7"
+          className="animate-clip-reveal text-accent font-display font-medium uppercase mb-5 md:mb-7"
           style={{ fontSize: "clamp(0.625rem, 1.5vw, 0.875rem)", letterSpacing: "0.4em" }}
         >
           {hero.subtitle}
         </p>
 
-        <h1 className="font-display font-bold uppercase leading-[0.8] tracking-tight text-white">
+        <h1 className="font-display font-bold uppercase leading-[0.8] tracking-tight text-fg">
           <span
             className="animate-clip-reveal-delay-1 block"
             style={{ fontSize: "clamp(2.75rem, 11vw, 9rem)" }}
@@ -125,7 +125,7 @@ export default function Hero({ content }: { content: SiteContent }) {
             href={content.contact.instagramDmUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-ripple bg-primary text-primary-fg font-display font-bold uppercase text-xs md:text-sm px-5 md:px-7 py-3.5 md:py-4 tracking-wide transition-all duration-300 hover:bg-accent hover:shadow-[0_0_30px_rgba(220,20,60,0.4)] whitespace-nowrap"
+            className="btn-ripple velvet-button text-primary-fg font-display font-bold uppercase text-xs md:text-sm px-5 md:px-7 py-3.5 md:py-4 tracking-wide transition-all duration-300 whitespace-nowrap"
           >
             <Instagram className="w-4 h-4" />
             Book Now
@@ -133,7 +133,7 @@ export default function Hero({ content }: { content: SiteContent }) {
 
           <MagneticButton
             href="#about"
-            className="btn-ripple border border-white/30 text-white font-display font-bold uppercase text-xs md:text-sm px-5 md:px-7 py-3.5 md:py-4 tracking-wide backdrop-blur-sm bg-white/5 transition-all duration-300 hover:border-primary hover:text-primary hover:bg-transparent whitespace-nowrap"
+            className="btn-ripple border border-accent/50 text-fg font-display font-bold uppercase text-xs md:text-sm px-5 md:px-7 py-3.5 md:py-4 tracking-wide backdrop-blur-sm bg-card/50 transition-all duration-300 hover:border-accent hover:text-accent hover:bg-transparent whitespace-nowrap"
           >
             <Play className="w-4 h-4 fill-current" />
             Watch Showreel
@@ -144,7 +144,7 @@ export default function Hero({ content }: { content: SiteContent }) {
           className="absolute bottom-20 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2"
           style={{ opacity: fadeOpacity }}
         >
-          <span className="text-muted text-[9px] uppercase tracking-[0.3em]">Scroll</span>
+          <span className="text-secondary text-[9px] uppercase tracking-[0.3em]">Scroll</span>
           <div className="w-px h-12 bg-gradient-to-b from-primary to-transparent animate-scroll-line" />
         </div>
       </div>

@@ -25,7 +25,7 @@ export default function About({ content }: { content: SiteContent }) {
       <div
         className="absolute -top-40 -right-40 w-96 h-96 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(220,20,60,0.06), transparent 70%)",
+          background: "radial-gradient(circle, rgba(255,30,66,0.12), transparent 70%)",
           filter: "blur(40px)",
         }}
       />
@@ -33,11 +33,11 @@ export default function About({ content }: { content: SiteContent }) {
       <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 relative">
         <Reveal direction="up" duration={0.8}>
           <h2
-            className="font-display font-bold uppercase leading-[0.85] tracking-tight text-white mb-12"
+            className="font-display font-bold uppercase leading-[0.85] tracking-tight text-fg mb-12"
             style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
           >
             {words.map((word, i) => (
-              <span key={i} className={i === highlightIdx ? "text-primary" : ""}>
+              <span key={i} className={i === highlightIdx ? "text-accent" : ""}>
                 {word}{i < words.length - 1 ? " " : ""}
               </span>
             ))}
@@ -46,7 +46,7 @@ export default function About({ content }: { content: SiteContent }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-stretch">
           <Reveal direction="left" duration={0.8}>
-            <TiltCard maxTilt={5} className="group relative w-full overflow-hidden border border-border flex-1 flex flex-col h-full">
+            <TiltCard maxTilt={5} className="group glass-card relative w-full overflow-hidden flex-1 flex flex-col h-full">
               {playing ? (
                 <div className="relative aspect-[9/16] bg-black">
                   <iframe
@@ -78,7 +78,7 @@ export default function About({ content }: { content: SiteContent }) {
                   </div>
                 </button>
               )}
-              <div className="border-t border-border p-4 bg-card">
+              <div className="border-t border-border p-4 bg-noir-surface">
                 <h3 className="font-display font-bold text-white text-sm uppercase leading-tight">
                   {about.showreelTitle}
                 </h3>

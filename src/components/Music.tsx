@@ -15,7 +15,7 @@ function ShowcaseVideo({ video, index }: { video: VideoItem; index: number }) {
 
   return (
     <Reveal direction="up" delay={index * 0.1} duration={0.6}>
-      <TiltCard maxTilt={6} className="release-card group border border-border bg-card overflow-hidden h-full">
+      <TiltCard maxTilt={6} className="release-card glass-card group overflow-hidden h-full">
         {playing ? (
           <div className="relative aspect-video bg-black">
             <iframe
@@ -42,14 +42,14 @@ function ShowcaseVideo({ video, index }: { video: VideoItem; index: number }) {
               <div className="absolute inset-0 bg-bg/20 group-hover:bg-bg/5 transition-colors duration-500" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-12 h-12 border-2 border-primary flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:animate-pulse-cta rounded-full">
-                  <Play className="w-5 h-5 text-primary fill-current ml-0.5" />
+                  <Play className="w-5 h-5 text-accent fill-current ml-0.5" />
                 </div>
               </div>
             </div>
           </button>
         )}
         <div className="p-4 border-t border-border">
-          <h3 className="font-display font-bold text-white text-sm uppercase leading-tight">
+          <h3 className="font-display font-bold text-fg text-sm uppercase leading-tight">
             {video.title}
           </h3>
           <p className="text-secondary text-[10px] mt-1 font-light leading-relaxed">
@@ -64,7 +64,7 @@ function ShowcaseVideo({ video, index }: { video: VideoItem; index: number }) {
 function ReleaseCard({ release, index }: { release: ReleaseItem; index: number }) {
   return (
     <Reveal direction="scale" delay={index * 0.08} duration={0.6}>
-      <TiltCard maxTilt={6} className="release-card border border-border bg-card group h-full">
+      <TiltCard maxTilt={6} className="release-card glass-card group h-full">
         <div className="relative aspect-video overflow-hidden">
           <img
             src={release.cover}
@@ -73,14 +73,14 @@ function ReleaseCard({ release, index }: { release: ReleaseItem; index: number }
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
           <div
-            className="absolute top-0 left-0 font-display font-bold uppercase text-[10px] tracking-wider px-3 py-1.5 text-primary-fg z-[2]"
-            style={{ background: release.tagColor || "#DC143C" }}
+            className="absolute top-0 left-0 font-display font-bold uppercase text-[10px] tracking-wider px-3 py-1.5 text-fg z-[2]"
+            style={{ background: release.tagColor || "#FF1E42" }}
           >
             {release.type}
           </div>
         </div>
         <div className="p-4 border-t border-border">
-          <h3 className="font-display font-bold text-white text-sm uppercase leading-tight">
+          <h3 className="font-display font-bold text-fg text-sm uppercase leading-tight">
             {release.title}
           </h3>
           <p className="text-secondary text-[10px] uppercase tracking-wider mt-1">
@@ -93,7 +93,7 @@ function ReleaseCard({ release, index }: { release: ReleaseItem; index: number }
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-secondary text-[10px] uppercase tracking-wider border border-border px-2.5 py-1.5 transition-all hover:border-primary hover:text-primary hover:bg-primary/5"
+                className="text-secondary text-[10px] uppercase tracking-wider border border-border px-2.5 py-1.5 transition-all hover:border-accent hover:text-accent hover:bg-accent/5"
               >
                 {link.label}
               </a>
@@ -114,11 +114,11 @@ export default function Music({ content }: { content: SiteContent }) {
   );
 
   return (
-    <section id="music" className="relative z-10 bg-[#111111] border-b border-border overflow-hidden">
+    <section id="music" className="relative z-10 bg-noir-surface border-b border-border overflow-hidden">
       <div
         className="absolute top-1/3 -left-40 w-80 h-80 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(220,20,60,0.04), transparent 70%)",
+          background: "radial-gradient(circle, rgba(255,30,66,0.1), transparent 70%)",
           filter: "blur(40px)",
         }}
       />
@@ -126,11 +126,11 @@ export default function Music({ content }: { content: SiteContent }) {
       <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 relative">
         <Reveal direction="up" duration={0.8}>
           <h2
-            className="font-display font-bold uppercase leading-[0.85] tracking-tight text-white mb-6"
+            className="font-display font-bold uppercase leading-[0.85] tracking-tight text-fg mb-6"
             style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
           >
             {words.map((word, i) => (
-              <span key={i} className={i === highlightIdx ? "text-primary" : ""}>
+              <span key={i} className={i === highlightIdx ? "text-accent" : ""}>
                 {word}{i < words.length - 1 ? " " : ""}
               </span>
             ))}
@@ -151,10 +151,10 @@ export default function Music({ content }: { content: SiteContent }) {
 
         <Reveal direction="up" duration={0.7}>
           <h3
-            className="font-display font-bold uppercase leading-[0.85] tracking-tight text-white mb-2"
+            className="font-display font-bold uppercase leading-[0.85] tracking-tight text-fg mb-2"
             style={{ fontSize: "clamp(1.5rem, 4vw, 3rem)" }}
           >
-            My voice, pressed to <span className="text-primary">record</span>
+            My voice, pressed to <span className="text-accent">record</span>
           </h3>
         </Reveal>
         <Reveal direction="up" delay={0.1} duration={0.6}>

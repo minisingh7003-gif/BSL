@@ -40,11 +40,11 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 
 export default function Stats() {
   return (
-    <section className="relative z-10 bg-[#111111] border-b border-border overflow-hidden">
+    <section className="relative z-10 bg-noir-surface border-b border-border overflow-hidden">
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse, rgba(220,20,60,0.05), transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(255,30,66,0.12), transparent 70%)",
           filter: "blur(60px)",
         }}
       />
@@ -54,7 +54,7 @@ export default function Stats() {
             <Reveal key={i} direction="up" delay={i * 0.1} duration={0.6}>
               <div className="text-center">
                 <div
-                  className="font-display font-bold text-primary leading-none mb-2"
+                  className="font-display font-bold text-accent leading-none mb-2"
                   style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
                 >
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />

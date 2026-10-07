@@ -45,16 +45,16 @@ export default function Nav({ content }: { content: SiteContent }) {
             <a
               key={link.label}
               href={link.href}
-              className="relative text-secondary text-sm font-light hover:text-primary transition-colors duration-200 group py-1"
+              className="relative text-secondary text-sm font-light hover:text-accent transition-colors duration-200 group py-1"
             >
               {link.label}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </div>
 
         <button
-          className="md:hidden text-secondary hover:text-primary transition-colors"
+          className="md:hidden text-secondary hover:text-accent transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
@@ -69,7 +69,7 @@ export default function Nav({ content }: { content: SiteContent }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.platform}
-              className="w-9 h-9 border border-border flex items-center justify-center text-secondary transition-all duration-300 hover:border-primary hover:text-primary hover:-translate-y-0.5 hover:bg-primary/5"
+              className="w-9 h-9 border border-border flex items-center justify-center text-secondary transition-all duration-300 hover:border-accent hover:text-accent hover:-translate-y-0.5 hover:bg-accent/5"
             >
               {iconMap[social.icon] || <Headphones className="w-4 h-4" />}
             </a>
@@ -85,7 +85,7 @@ export default function Nav({ content }: { content: SiteContent }) {
                 key={link.label}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-secondary text-sm font-light hover:text-primary transition-colors py-2 border-b border-border/50 last:border-0"
+                className="text-secondary text-sm font-light hover:text-accent transition-colors py-2 border-b border-border/50 last:border-0"
               >
                 {link.label}
               </a>
