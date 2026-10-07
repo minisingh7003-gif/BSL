@@ -5,9 +5,6 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Music from "@/components/Music";
 import Photos from "@/components/Photos";
-import Stats from "@/components/Stats";
-import PressCoverage from "@/components/PressCoverage";
-import DownloadableAssets from "@/components/DownloadableAssets";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import StickyBookingBar from "@/components/StickyBookingBar";
@@ -56,11 +53,8 @@ function App() {
       <main>
         <Hero content={content} />
         <About content={content} />
-        <Stats />
         <Music content={content} />
         <Photos content={content} />
-        <PressCoverage />
-        <DownloadableAssets />
         <Contact content={content} />
       </main>
       <Footer content={content} />
